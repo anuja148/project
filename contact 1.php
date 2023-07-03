@@ -1,0 +1,117 @@
+<?php
+if(isset($_POST['Send'])){
+    $first_name =$_POST['first_name'];
+    $last_name =$_POST['last_name'];
+    $Mobile_no =$_POST['Mobile_no'];
+    $e_mail =$_POST['e-mail'];
+    $message =$_POST['message'];
+
+    $host = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $dbname ='contact details';
+
+    $conn = mysqli_connect($host,$user,$pass,$dbname);
+
+    $sql ="INSERT INTO contact(first_name,last_name,Mobile_no,e_mail,message) values ('$first_name','$last_name','$Mobile_no','$e_mail','$message')";
+    mysqli_query($conn,$sql);
+
+}
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Montserrat:wght@400;500&family=Poppins&display=swap"
+        rel="stylesheet">
+    <meta property="og:title" content="Atmashant Mastani">
+    <meta property="og:description" content="A dummy website which delivers ice-creams to your doorstep!!">
+    <meta property="og:url" content="https://lushgelato.netlify.app/">
+    <meta property="og:image" content="https://i.imgur.com/vagBfJI.png">
+    <meta property="og:site_name" content="Atmashant Mastani">
+
+    <meta name="twitter:image" content="https://i.imgur.com/vagBfJI.png">
+    <meta name="author" content="Srikar KSV">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmashant Mastani</title>
+    <link rel="shortcut icon" href="./img/ice-pop-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="homepage.html">
+    <link rel="stylesheet" href="contact.css">
+
+</head>
+
+<body>
+    <!-- <nav class="navbar">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </div>
+        <img src="img//logo.favicon.jpg" alt="logo" style=" width: 260px;">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link-active"> <b> Explore</b></a>
+            </li>
+
+        </ul>
+    </nav> -->
+
+
+
+    <div id="h1">
+
+        <header>
+
+
+            </ul>
+            <main>
+                <div class="title">Contact us</div>
+                <div class="title-info">We'll get back to you soon!</div>
+
+                <form action="" method="" class="form">
+                    <div class="input-group">
+                        <input type="text" name="first_name" id="first-name" placeholder="First name">
+                        <label for="first-name">First name</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                        <label for="last_name">Last name</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" name="e-mail" id="e-mail" placeholder="e-mail">
+                        <label for="e-mail">e-mail</label>
+                    </div>
+
+                    <div class="textarea-group">
+                        <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+
+                    <div class="button-div">
+                        <button type="submit">Send</button>
+                    </div>
+                    <div class="button-div">
+                        <!-- <button type="submit" value="index.html">Home</button> -->
+                        <a href="index.html"
+                            style="border: 1px solid rgb(47, 255, 196); padding: 5px; border-radius: 1px; font-size: 20px; font-weight: bold;">Back
+                            to Home</a>
+                    </div>
+                </form>
+            </main>
+
+
+        </header>
+    </div>
+</body>
+
+</html>
